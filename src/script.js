@@ -10,9 +10,13 @@ function setLocalStorage() {
 }
 
 function setAlertMessage(message, color = "red") {
+    todoAlert.removeAttribute("class");
     todoAlert.innerText = message; 
     todoAlert.style.color = color; 
-}
+    setTimeout(() => {
+        todoAlert.classList.add("toggleMe");
+      }, 1000);
+    }
 
 function createItem() {
     todoAlert.innerText = "";
@@ -103,7 +107,7 @@ function UpdateOnSelectionItems() {
     setLocalStorage();
     updateText.innerText = todoValue.value;
     addUpdate.setAttribute("onclick", "createItem()");
-    addUpdate.setAttribute("src", "//images/add.png");
+    addUpdate.setAttribute("src", "../images/add.png");
     todoValue.value = "";
     setAlertMessage("ToDo item updated successfully", "blue");
 }
@@ -126,7 +130,7 @@ function DeleteToDoItems(e) {
 function CompletedToDoItems(e) {
     if (e.parentElement.querySelector("div").style.textDecoration==="") {
         const img = document.createElement("img");
-        img.src="//images/check.png";
+        img.src="../images/check.png";
         img.className= "todo-controls";
         e.parentElement.querySelector("div").style.textDecoration= "line-through";
         e.parentElement.querySelector("div").appendChild(img);
@@ -143,3 +147,4 @@ function CompletedToDoItems(e) {
         setAlertMessage("ToDo Item Completed Successfuly");
     }
 }
+
