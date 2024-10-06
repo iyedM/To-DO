@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do Application</title>
+    <title>To-Do Application with Deadline</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,13 +15,14 @@
         </div>
         <div class="todo-body">
             <input type="text" name="item" placeholder="Add Your Items" id="todotext" class="todo-input">
+            <input type="datetime-local" id="deadline" class="todo-deadline">
             <img src="../images/add.png" alt="+" id="addClick" onclick="createItem()">
         </div>
         <h5 id="Alert"></h5>
         <ul id="list-items" class="list-items"></ul>
     </div>
     
-    <!-- Inclure le script ici, après le chargement de tous les éléments du DOM -->
+    <!-- Include the script here, after all the DOM elements have loaded -->
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
